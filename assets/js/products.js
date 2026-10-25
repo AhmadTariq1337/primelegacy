@@ -89,6 +89,47 @@ window.PRODUCTS = [
     desc: 'A statement suit in deep emerald with peak lapels, ideal for weddings and evening events.' }
 ];
 
+/* One entry per collection page (slug = file name without .html). */
+const TOP_CATS = ['formal', 'casual', 'polos'];
+window.COLLECTIONS = [
+  { slug: 'shop', title: 'Shop All', eyebrow: 'The Full Collection', img: '1441984904996-e0b6ba687e04',
+    desc: 'Every PrimeLegacy piece in one place — shirts, trousers, outerwear, tailoring and fragrance.',
+    match: () => true },
+  { slug: 'new-arrivals', title: 'New Arrivals', eyebrow: 'Just Landed', img: '1617137968427-85924c800a22',
+    desc: 'The latest additions to the wardrobe — fresh cuts, new colourways and this season\'s statement pieces.',
+    match: p => p.isNew },
+  { slug: 'tops', title: 'Shirts & Polos', eyebrow: 'Tops', img: '1603252109303-2751441dd157',
+    desc: 'Crisp formal shirts, relaxed casual shirts, polos and everyday tees built on premium cotton.',
+    match: p => TOP_CATS.includes(p.cat), children: ['formal-shirts', 'casual-shirts', 'polos-tees'] },
+  { slug: 'formal-shirts', parent: 'tops', title: 'Formal Shirts', eyebrow: 'Tops', img: '1598033129183-c4f50c736f10',
+    desc: 'Oxford, poplin and twill shirts with sharp collars and a tailored fit — made for the boardroom and beyond.',
+    match: p => p.cat === 'formal' },
+  { slug: 'casual-shirts', parent: 'tops', title: 'Casual Shirts', eyebrow: 'Tops', img: '1607345366928-199ea26cfe3e',
+    desc: 'Flannel, chambray and garment-washed Oxford — easy shirts for weekends and off-duty days.',
+    match: p => p.cat === 'casual' },
+  { slug: 'polos-tees', parent: 'tops', title: 'Polos & Tees', eyebrow: 'Tops', img: '1586363104862-3a5e2ab60d99',
+    desc: 'Breathable piqué polos and heavyweight tees that keep their shape wash after wash.',
+    match: p => p.cat === 'polos' },
+  { slug: 'bottoms', title: 'Trousers & Denim', eyebrow: 'Bottoms', img: '1584865288642-42078afe6942',
+    desc: 'Tapered trousers, stretch chinos and rigid denim — the foundation every outfit is built on.',
+    match: p => p.cat === 'bottoms' },
+  { slug: 'winter-collection', title: 'The Winter Collection', eyebrow: 'Autumn / Winter 2026', img: '1604644401890-0bd678c83788',
+    desc: 'Wool overcoats, leather, knitwear and utility jackets designed for the colder months and the years after.',
+    match: p => p.cat === 'winter' },
+  { slug: 'tailoring', title: 'Tailoring', eyebrow: 'Suits & Occasion', img: '1580657018950-c7f7d6a6d990',
+    desc: 'Half-canvassed suits in rich wool blends, cut for weddings, events and the moments that matter.',
+    match: p => p.cat === 'tailoring' },
+  { slug: 'fragrance', title: 'Fragrance', eyebrow: 'Signature Scents', img: '1588405748880-12d1d2a59f75',
+    desc: 'Long-lasting Eau de Parfum and concentrated attar oils — amber, oud, rose and sandalwood.',
+    match: p => p.cat === 'fragrance' }
+];
+
+// Which collection page a product's category belongs to (used for breadcrumbs).
+window.CAT_PAGE = {
+  formal: 'formal-shirts', casual: 'casual-shirts', polos: 'polos-tees', bottoms: 'bottoms',
+  winter: 'winter-collection', tailoring: 'tailoring', fragrance: 'fragrance'
+};
+
 window.LOOKBOOK = [
   { img: '1617137968427-85924c800a22', title: 'The Sharp Commute', product: 's1' },
   { img: '1552374196-1ab2a1c593e8', title: 'Camel & Cream', product: 'b2' },

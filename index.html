@@ -17,133 +17,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="is-loading">
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Preloader -->
-  <div class="preloader" aria-hidden="true">
-    <div class="preloader__mark">
-      <span class="preloader__word">Prime</span><span class="preloader__word preloader__word--italic">Legacy</span>
-    </div>
-    <div class="preloader__bar"><span></span></div>
-  </div>
-
-  <!-- Custom cursor (desktop only) -->
-  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
-
-  <!-- Announcement bar -->
-  <div class="announce" role="region" aria-label="Announcements">
-    <div class="announce__track">
-      <p class="announce__msg is-active">Complimentary shipping on orders above Rs. 5,000</p>
-      <p class="announce__msg">The Winter Collection — now available</p>
-      <p class="announce__msg">Hassle-free 7-day exchanges, nationwide</p>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="header" id="header">
-    <div class="header__inner container">
-      <button class="icon-btn header__burger" id="menuOpen" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
-        <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h12"/></svg>
-      </button>
-
-      <nav class="nav" aria-label="Primary">
-        <ul class="nav__list">
-          <li class="nav__item nav__item--mega">
-            <a href="#shop" class="nav__link" data-filter="all">Shop</a>
-            <div class="mega" role="region" aria-label="Shop menu">
-              <div class="mega__inner container">
-                <div class="mega__col">
-                  <p class="mega__title">Tops</p>
-                  <a href="#shop" data-filter="formal">Formal Shirts</a>
-                  <a href="#shop" data-filter="casual">Casual Shirts</a>
-                  <a href="#shop" data-filter="polos">Polos &amp; Tees</a>
-                </div>
-                <div class="mega__col">
-                  <p class="mega__title">Bottoms</p>
-                  <a href="#shop" data-filter="bottoms">Tailored Trousers</a>
-                  <a href="#shop" data-filter="bottoms">Chinos</a>
-                  <a href="#shop" data-filter="bottoms">Denim</a>
-                </div>
-                <div class="mega__col">
-                  <p class="mega__title">Collections</p>
-                  <a href="#shop" data-filter="new">New Arrivals</a>
-                  <a href="#shop" data-filter="winter">The Winter Collection</a>
-                  <a href="#shop" data-filter="tailoring">Tailoring</a>
-                  <a href="#shop" data-filter="fragrance">Fragrance</a>
-                </div>
-                <a href="#shop" class="mega__feature" data-filter="winter">
-                  <img src="https://images.unsplash.com/photo-1559582798-678dfc71ccd8?auto=format&fit=crop&w=600&q=75" alt="Man in a camel overcoat walking with a leather bag" loading="lazy">
-                  <span class="mega__feature-text">The Winter Edit <em>Shop now →</em></span>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="nav__item"><a href="#shop" class="nav__link" data-filter="new">New In</a></li>
-          <li class="nav__item"><a href="#fragrance" class="nav__link">Fragrance</a></li>
-          <li class="nav__item"><a href="#lookbook" class="nav__link">Lookbook</a></li>
-        </ul>
-      </nav>
-
-      <a href="#top" class="logo" aria-label="PrimeLegacy home">
-        <span class="logo__prime">Prime</span><span class="logo__legacy">Legacy</span>
-      </a>
-
-      <div class="header__actions">
-        <a href="#story" class="nav__link header__text-link">Our Story</a>
-        <a href="#contact" class="nav__link header__text-link">Contact</a>
-        <button class="icon-btn" id="searchOpen" aria-label="Search">
-          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        </button>
-        <button class="icon-btn" id="wishOpen" aria-label="Wishlist">
-          <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>
-          <span class="badge" data-wish-count hidden>0</span>
-        </button>
-        <button class="icon-btn" id="cartOpen" aria-label="Cart">
-          <svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
-          <span class="badge" data-cart-count hidden>0</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile nav -->
-  <aside class="mobile-nav" id="mobileNav" aria-label="Mobile menu" aria-hidden="true">
-    <div class="mobile-nav__head">
-      <span class="logo logo--small"><span class="logo__prime">Prime</span><span class="logo__legacy">Legacy</span></span>
-      <button class="icon-btn" id="menuClose" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    </div>
-    <nav class="mobile-nav__links">
-      <a href="#shop" data-filter="all">Shop All</a>
-      <a href="#shop" data-filter="new">New Arrivals</a>
-      <a href="#shop" data-filter="formal">Formal Shirts</a>
-      <a href="#shop" data-filter="casual">Casual Shirts</a>
-      <a href="#shop" data-filter="polos">Polos &amp; Tees</a>
-      <a href="#shop" data-filter="bottoms">Bottoms</a>
-      <a href="#shop" data-filter="winter">The Winter Collection</a>
-      <a href="#shop" data-filter="tailoring">Tailoring</a>
-      <a href="#fragrance">Fragrance</a>
-      <a href="#lookbook">Lookbook</a>
-      <a href="#story">Our Story</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="mobile-nav__foot">
-      <p>Need help? <a href="#contact">Get in touch</a></p>
-    </div>
-  </aside>
-
+<body data-page="home">
   <main id="main">
     <!-- Hero -->
     <section class="hero" id="top" aria-roledescription="carousel" aria-label="Featured collections">
       <div class="hero__slides">
-        <article class="hero__slide is-active" data-cursor="Explore">
+        <article class="hero__slide is-active">
           <div class="hero__media"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=2000&q=80" alt="Man in a navy suit buttoning his jacket" fetchpriority="high"></div>
           <div class="hero__content container">
             <p class="eyebrow">Autumn / Winter 2026</p>
             <h1 class="hero__title"><span class="line"><span>Build Your</span></span><span class="line"><span><em>Legacy.</em></span></span></h1>
             <p class="hero__text">Clean cuts, considered fabrics and bold simplicity — menswear made to be worn for years, not seasons.</p>
             <div class="hero__ctas">
-              <a href="#shop" class="btn btn--light" data-filter="all">Shop the Collection</a>
+              <a href="shop.html" class="btn btn--light">Shop the Collection</a>
               <a href="#lookbook" class="btn btn--ghost-light">View Lookbook</a>
             </div>
           </div>
@@ -155,7 +41,7 @@
             <h2 class="hero__title"><span class="line"><span>Warmth,</span></span><span class="line"><span><em>Tailored.</em></span></span></h2>
             <p class="hero__text">Wool overcoats, leather and knitwear designed for the colder months and the years after.</p>
             <div class="hero__ctas">
-              <a href="#shop" class="btn btn--light" data-filter="winter">Shop Winter</a>
+              <a href="winter-collection.html" class="btn btn--light">Shop Winter</a>
             </div>
           </div>
         </article>
@@ -166,7 +52,7 @@
             <h2 class="hero__title"><span class="line"><span>Leave an</span></span><span class="line"><span><em>Impression.</em></span></span></h2>
             <p class="hero__text">Our Eau de Parfum line — amber, oud and rose, blended to linger long after you leave the room.</p>
             <div class="hero__ctas">
-              <a href="#fragrance" class="btn btn--light">Discover Fragrance</a>
+              <a href="fragrance.html" class="btn btn--light">Discover Fragrance</a>
             </div>
           </div>
         </article>
@@ -203,23 +89,23 @@
           <h2 class="section-title">Dressed for every <em>chapter</em></h2>
         </div>
         <div class="collections__grid">
-          <a href="#shop" class="col-card col-card--tall reveal" data-filter="winter" data-cursor="Shop">
+          <a href="winter-collection.html" class="col-card col-card--tall reveal">
             <img src="https://images.unsplash.com/photo-1604644401890-0bd678c83788?auto=format&fit=crop&w=1000&q=80" alt="Rail of wool coats in navy and red" loading="lazy">
-            <div class="col-card__body"><span class="col-card__count" data-count-for="winter"></span><h3>The Winter Collection</h3><span class="col-card__cta">Shop now</span></div>
+            <div class="col-card__body"><span class="col-card__count" data-count-for="winter-collection"></span><h3>The Winter Collection</h3><span class="col-card__cta">Shop now</span></div>
           </a>
-          <a href="#shop" class="col-card reveal" data-filter="new" data-cursor="Shop">
+          <a href="new-arrivals.html" class="col-card reveal">
             <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=900&q=80" alt="Man in a royal blue suit walking" loading="lazy">
-            <div class="col-card__body"><span class="col-card__count" data-count-for="new"></span><h3>New Arrivals</h3><span class="col-card__cta">Shop now</span></div>
+            <div class="col-card__body"><span class="col-card__count" data-count-for="new-arrivals"></span><h3>New Arrivals</h3><span class="col-card__cta">Shop now</span></div>
           </a>
-          <a href="#shop" class="col-card reveal" data-filter="fragrance" data-cursor="Shop">
+          <a href="fragrance.html" class="col-card reveal">
             <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=80" alt="Amber glass perfume bottle on linen" loading="lazy">
             <div class="col-card__body"><span class="col-card__count" data-count-for="fragrance"></span><h3>Fragrance</h3><span class="col-card__cta">Shop now</span></div>
           </a>
-          <a href="#shop" class="col-card reveal" data-filter="tops" data-cursor="Shop">
+          <a href="tops.html" class="col-card reveal">
             <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=900&q=80" alt="White dress shirts hanging on a rail" loading="lazy">
             <div class="col-card__body"><span class="col-card__count" data-count-for="tops"></span><h3>Tops — Shirts &amp; Polos</h3><span class="col-card__cta">Shop now</span></div>
           </a>
-          <a href="#shop" class="col-card reveal" data-filter="bottoms" data-cursor="Shop">
+          <a href="bottoms.html" class="col-card reveal">
             <img src="https://images.unsplash.com/photo-1584865288642-42078afe6942?auto=format&fit=crop&w=900&q=80" alt="Man in white shirt and tailored black trousers" loading="lazy">
             <div class="col-card__body"><span class="col-card__count" data-count-for="bottoms"></span><h3>Bottoms — Trousers</h3><span class="col-card__cta">Shop now</span></div>
           </a>
@@ -227,7 +113,7 @@
       </div>
     </section>
 
-    <!-- Shop -->
+    <!-- Featured products -->
     <section class="section shop" id="shop">
       <div class="container">
         <div class="section-head section-head--row reveal">
@@ -235,38 +121,19 @@
             <p class="eyebrow eyebrow--dark">The Shop</p>
             <h2 class="section-title">Shop the <em>essentials</em></h2>
           </div>
-          <div class="shop__tools">
-            <label class="select">
-              <span class="visually-hidden">Sort products</span>
-              <select id="sortSelect">
-                <option value="featured">Featured</option>
-                <option value="new">Newest</option>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-                <option value="name">Alphabetical</option>
-              </select>
-            </label>
-          </div>
+          <a href="shop.html" class="btn btn--outline" id="viewAll">View all</a>
         </div>
 
-        <div class="filters reveal" role="tablist" aria-label="Filter products" id="filters">
-          <button class="chip is-active" data-chip="all" role="tab" aria-selected="true">All</button>
-          <button class="chip" data-chip="new" role="tab" aria-selected="false">New Arrivals</button>
-          <button class="chip" data-chip="tops" role="tab" aria-selected="false">All Tops</button>
-          <button class="chip" data-chip="formal" role="tab" aria-selected="false">Formal Shirts</button>
-          <button class="chip" data-chip="casual" role="tab" aria-selected="false">Casual Shirts</button>
-          <button class="chip" data-chip="polos" role="tab" aria-selected="false">Polos &amp; Tees</button>
-          <button class="chip" data-chip="bottoms" role="tab" aria-selected="false">Bottoms</button>
-          <button class="chip" data-chip="winter" role="tab" aria-selected="false">Winter</button>
-          <button class="chip" data-chip="tailoring" role="tab" aria-selected="false">Tailoring</button>
-          <button class="chip" data-chip="fragrance" role="tab" aria-selected="false">Fragrance</button>
+        <div class="filters reveal" role="tablist" aria-label="Featured products" id="homeTabs">
+          <button class="chip is-active" data-tab="shop" role="tab" aria-selected="true">Bestsellers</button>
+          <button class="chip" data-tab="new-arrivals" role="tab" aria-selected="false">New Arrivals</button>
+          <button class="chip" data-tab="tops" role="tab" aria-selected="false">Shirts &amp; Polos</button>
+          <button class="chip" data-tab="bottoms" role="tab" aria-selected="false">Bottoms</button>
+          <button class="chip" data-tab="winter-collection" role="tab" aria-selected="false">Winter</button>
+          <button class="chip" data-tab="fragrance" role="tab" aria-selected="false">Fragrance</button>
         </div>
 
-        <p class="shop__meta" aria-live="polite"><span id="resultCount"></span></p>
         <div class="product-grid" id="productGrid"></div>
-        <div class="shop__more">
-          <button class="btn btn--outline" id="loadMore">Load more</button>
-        </div>
       </div>
     </section>
 
@@ -295,7 +162,7 @@
             <div class="stat"><span class="stat__num" data-counter="7">0</span><span class="stat__suffix">-day</span><p>Hassle-free exchange</p></div>
             <div class="stat"><span class="stat__num" data-counter="24">0</span><span class="stat__suffix">/7</span><p>Customer support</p></div>
           </div>
-          <a href="#shop" class="btn btn--dark reveal" data-filter="all">Upgrade Your Wardrobe</a>
+          <a href="shop.html" class="btn btn--dark reveal">Upgrade Your Wardrobe</a>
         </div>
       </div>
     </section>
@@ -312,7 +179,7 @@
           <button class="icon-btn icon-btn--outline" data-look-next aria-label="Scroll lookbook right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </div>
-      <div class="lookbook__track" id="lookTrack" data-cursor="Drag" tabindex="0" aria-label="Lookbook gallery, scroll horizontally"></div>
+      <div class="lookbook__track" id="lookTrack" tabindex="0" aria-label="Lookbook gallery, scroll horizontally"></div>
       <div class="container"><div class="lookbook__progress"><span id="lookProgress"></span></div></div>
     </section>
 
@@ -341,8 +208,8 @@
             <div><dt>Occasion</dt><dd>Evening · Formal</dd></div>
           </dl>
           <div class="fragrance__ctas reveal">
-            <button class="btn btn--light" data-quick="f1">Shop Amber Oud — Rs. 6,499</button>
-            <a href="#shop" class="btn btn--ghost-light" data-filter="fragrance">All Fragrances</a>
+            <a class="btn btn--light" href="product.html?id=f1">Shop Amber Oud — Rs. 6,499</a>
+            <a href="fragrance.html" class="btn btn--ghost-light">All Fragrances</a>
           </div>
         </div>
         <div class="fragrance__visual reveal">
@@ -354,28 +221,7 @@
 
     <!-- Services -->
     <section class="section services">
-      <div class="container services__grid">
-        <div class="service reveal">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 12h24v20H4zM28 18h9l7 7v7H28z"/><circle cx="12" cy="35" r="4"/><circle cx="36" cy="35" r="4"/></svg>
-          <h3>Fast Shipping</h3>
-          <p>Free delivery on orders above Rs. 5,000. No hidden charges — just effortless delivery to your door.</p>
-        </div>
-        <div class="service reveal">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 18a16 16 0 0 1 29-6M40 30a16 16 0 0 1-29 6"/><path d="M37 4v8h-8M11 44v-8h8"/></svg>
-          <h3>Hassle-Free Exchange</h3>
-          <p>Every piece is checked before dispatch. Wrong size? Exchange within 7 days, no questions asked.</p>
-        </div>
-        <div class="service reveal">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 26v-4a16 16 0 0 1 32 0v4"/><rect x="6" y="26" width="8" height="12" rx="2"/><rect x="34" y="26" width="8" height="12" rx="2"/><path d="M40 38c0 4-4 6-10 6h-4"/></svg>
-          <h3>24/7 Support</h3>
-          <p>Questions about sizing, orders or styling? Our team is here to help, any time you need us.</p>
-        </div>
-        <div class="service reveal">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M17 24l5 5 9-10"/></svg>
-          <h3>Cash on Delivery</h3>
-          <p>Pay when your order arrives. Simple, secure and available across the country.</p>
-        </div>
-      </div>
+      <div class="container services__grid" data-services></div>
     </section>
 
     <!-- Newsletter -->
@@ -403,8 +249,8 @@
           <p class="eyebrow eyebrow--dark reveal">Get in Touch</p>
           <h2 class="section-title reveal">We'd love to <em>hear from you</em></h2>
           <ul class="contact__list reveal">
-            <li><span>Email</span><a href="mailto:hello@primelegacy.com" data-contact-email>hello@primelegacy.com</a></li>
-            <li><span>Phone / WhatsApp</span><a href="tel:+923000000000" data-contact-phone>+92 300 0000000</a></li>
+            <li><span>Email</span><a href="#" data-contact-email></a></li>
+            <li><span>Phone / WhatsApp</span><a href="#" data-contact-phone></a></li>
             <li><span>Hours</span>Mon – Sat, 10am – 8pm PKT</li>
           </ul>
           <div class="socials reveal">
@@ -466,163 +312,8 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <a href="#top" class="logo logo--light"><span class="logo__prime">Prime</span><span class="logo__legacy">Legacy</span></a>
-          <p>Refined menswear and fragrance, crafted to last. Upgrade your wardrobe, embrace your individuality.</p>
-        </div>
-        <div class="footer__col">
-          <h4>Shop</h4>
-          <a href="#shop" data-filter="new">New Arrivals</a>
-          <a href="#shop" data-filter="formal">Formal Shirts</a>
-          <a href="#shop" data-filter="polos">Polos &amp; Tees</a>
-          <a href="#shop" data-filter="bottoms">Bottoms</a>
-          <a href="#shop" data-filter="winter">Winter Collection</a>
-          <a href="#fragrance">Fragrance</a>
-        </div>
-        <div class="footer__col">
-          <h4>Help</h4>
-          <a href="#contact">Contact Us</a>
-          <a href="#contact">Shipping &amp; Delivery</a>
-          <a href="#contact">Exchanges</a>
-          <button type="button" class="link-btn" data-size-guide>Size Guide</button>
-        </div>
-        <div class="footer__col">
-          <h4>Company</h4>
-          <a href="#story">Our Story</a>
-          <a href="#lookbook">Lookbook</a>
-          <a href="#contact">Careers</a>
-        </div>
-      </div>
-      <div class="footer__big" aria-hidden="true">PrimeLegacy</div>
-      <div class="footer__bottom">
-        <p>&copy; <span data-year></span> PrimeLegacy. All rights reserved.</p>
-        <p class="footer__pay"><span>Cash on Delivery</span><span>Bank Transfer</span><span>Nationwide Shipping</span></p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Search overlay -->
-  <div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search products" aria-hidden="true">
-    <div class="search__inner container">
-      <div class="search__bar">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <label for="searchInput" class="visually-hidden">Search</label>
-        <input id="searchInput" type="search" placeholder="Search shirts, trousers, fragrance…" autocomplete="off">
-        <button class="icon-btn" id="searchClose" aria-label="Close search"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-      </div>
-      <div class="search__suggest">
-        <span>Popular:</span>
-        <button data-term="polo">Polo</button>
-        <button data-term="oud">Oud</button>
-        <button data-term="trousers">Trousers</button>
-        <button data-term="jacket">Jacket</button>
-        <button data-term="formal">Formal</button>
-      </div>
-      <div class="search__results" id="searchResults" aria-live="polite"></div>
-    </div>
-  </div>
-
-  <!-- Drawer (cart / wishlist) -->
-  <div class="overlay" id="overlay" hidden></div>
-  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
-    <div class="drawer__head">
-      <div class="drawer__tabs">
-        <button class="drawer__tab is-active" data-drawer-tab="cart" id="drawerTitle">Cart <span data-cart-count-inline>(0)</span></button>
-        <button class="drawer__tab" data-drawer-tab="wish">Wishlist <span data-wish-count-inline>(0)</span></button>
-      </div>
-      <button class="icon-btn" id="drawerClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    </div>
-    <div class="drawer__ship" data-ship>
-      <p data-ship-text></p>
-      <div class="drawer__ship-bar"><span data-ship-bar></span></div>
-    </div>
-    <div class="drawer__body" id="drawerBody"></div>
-    <div class="drawer__foot" id="drawerFoot">
-      <div class="drawer__row"><span>Subtotal</span><strong data-subtotal>Rs. 0</strong></div>
-      <p class="drawer__note">Shipping &amp; taxes calculated at checkout.</p>
-      <button class="btn btn--dark btn--block" id="checkoutBtn">Checkout</button>
-      <button class="btn btn--text btn--block" data-drawer-close>Continue shopping</button>
-    </div>
-  </aside>
-
-  <!-- Quick view modal -->
-  <div class="modal" id="quickView" role="dialog" aria-modal="true" aria-labelledby="qvTitle" aria-hidden="true">
-    <div class="modal__dialog modal__dialog--wide">
-      <button class="icon-btn modal__close" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-      <div class="qv">
-        <div class="qv__media"><div class="qv__zoom" id="qvZoom"><img id="qvImg" alt=""></div></div>
-        <div class="qv__info">
-          <p class="eyebrow eyebrow--dark" id="qvCat"></p>
-          <h3 class="qv__title" id="qvTitle"></h3>
-          <p class="qv__price" id="qvPrice"></p>
-          <p class="qv__desc" id="qvDesc"></p>
-          <div class="qv__opt">
-            <div class="qv__opt-head"><span id="qvOptLabel">Size</span><button type="button" class="link-btn" data-size-guide id="qvSizeGuide">Size guide</button></div>
-            <div class="sizes" id="qvSizes" role="radiogroup" aria-label="Choose option"></div>
-          </div>
-          <div class="qv__actions">
-            <div class="qty" aria-label="Quantity">
-              <button type="button" data-qv-qty="-1" aria-label="Decrease quantity">−</button>
-              <span id="qvQty">1</span>
-              <button type="button" data-qv-qty="1" aria-label="Increase quantity">+</button>
-            </div>
-            <button class="btn btn--dark qv__add" id="qvAdd">Add to Cart</button>
-            <button class="icon-btn icon-btn--outline qv__wish" id="qvWish" aria-label="Add to wishlist" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></button>
-          </div>
-          <ul class="qv__perks">
-            <li>Free shipping over Rs. 5,000</li>
-            <li>7-day hassle-free exchange</li>
-            <li>Cash on delivery available</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Size guide modal -->
-  <div class="modal" id="sizeGuide" role="dialog" aria-modal="true" aria-labelledby="sgTitle" aria-hidden="true">
-    <div class="modal__dialog">
-      <button class="icon-btn modal__close" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-      <h3 class="modal__title" id="sgTitle">Size Guide</h3>
-      <div class="sg__tabs" role="tablist">
-        <button role="tab" class="chip is-active" data-sg="tops" aria-selected="true">Tops</button>
-        <button role="tab" class="chip" data-sg="bottoms" aria-selected="false">Bottoms</button>
-      </div>
-      <div class="sg__unit">
-        <span>Units:</span>
-        <button class="link-btn is-active" data-unit="in">Inches</button>
-        <button class="link-btn" data-unit="cm">CM</button>
-      </div>
-      <div class="table-wrap"><table class="sg__table" id="sgTable"></table></div>
-      <p class="modal__note">Measurements are of the body, not the garment. Between sizes? Size up for a relaxed fit.</p>
-    </div>
-  </div>
-
-  <!-- Checkout modal -->
-  <div class="modal" id="checkout" role="dialog" aria-modal="true" aria-labelledby="coTitle" aria-hidden="true">
-    <div class="modal__dialog">
-      <button class="icon-btn modal__close" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-      <h3 class="modal__title" id="coTitle">Place your order</h3>
-      <p class="modal__note">Online payments are coming soon. Send us your order and our team will confirm it with you directly — pay cash on delivery.</p>
-      <div class="co__summary" id="coSummary"></div>
-      <div class="co__actions">
-        <a class="btn btn--dark btn--block" id="coWhatsapp" target="_blank" rel="noopener">Order via WhatsApp</a>
-        <a class="btn btn--outline btn--block" id="coEmail">Order via Email</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toasts & back to top -->
-  <div class="toasts" id="toasts" aria-live="polite"></div>
-  <button class="to-top" id="toTop" aria-label="Back to top">
-    <svg class="to-top__ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><circle cx="24" cy="24" r="22" class="to-top__progress"/></svg>
-    <svg class="to-top__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-  </button>
-
   <script src="assets/js/products.js"></script>
+  <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
