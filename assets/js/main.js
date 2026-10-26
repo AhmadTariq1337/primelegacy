@@ -15,6 +15,15 @@
   const productUrl = id => `product.html?id=${encodeURIComponent(id)}`;
   const byRank = (a, b) => a.rank - b.rank;
 
+  // Buy Now opens WhatsApp with the product pre-filled in the message.
+  const WA_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.2-4.2A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 8.6c0 3.4 2.9 6.3 6.3 6.3l1.1-1.4-2.1-1-.9.8c-1-.4-2.2-1.6-2.6-2.6l.8-.9-1-2.1z"/></svg>';
+  const whatsappUrl = (p, size, qty = 1) => {
+    const link = new URL(productUrl(p.id), location.href).href;
+    const optLabel = p.cat === 'fragrance' ? 'Volume' : 'Size';
+    const text = `Hello ${STORE.name}! I'd like to buy:\n\n${p.name}\nPrice: ${money(p.price)}\n${optLabel}: ${size || '(please confirm)'}\nQuantity: ${qty}\n\n${link}`;
+    return `https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent(text)}`;
+  };
+
   const store = {
     get(key, fallback) {
       try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
@@ -93,6 +102,7 @@
         </div>
         <p class="price ${p.oldPrice ? 'price--sale' : ''}">${money(p.price)}${p.oldPrice ? `<s>${money(p.oldPrice)}</s>` : ''}</p>
       </div>
+      <a class="card__buy" href="${whatsappUrl(p)}" target="_blank" rel="noopener" aria-label="Buy ${esc(p.name)} on WhatsApp">${WA_ICON}Buy Now</a>
     </article>`;
   };
 
@@ -317,7 +327,7 @@
                   <button class="btn btn--dark qv__add" id="pdpAdd">Add to Cart</button>
                   <button class="icon-btn icon-btn--outline qv__wish" data-wish="${p.id}" aria-label="Add to wishlist" aria-pressed="false">${ICONS.heart}</button>
                 </div>
-                <button class="btn btn--outline btn--block pdp__buy" id="pdpBuy">Buy it now</button>
+                <button class="btn btn--whatsapp btn--block pdp__buy" id="pdpBuy">${WA_ICON}Buy Now on WhatsApp</button>
                 <button type="button" class="pdp__share" id="pdpShare">
                   <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
                   Share this piece
@@ -394,9 +404,7 @@
       $('#pdpAdd').addEventListener('click', () => { if (requireSize()) addToCart(p.id, size, qty); });
       $('#stickyAdd').addEventListener('click', () => { if (requireSize()) addToCart(p.id, size, qty); });
       $('#pdpBuy').addEventListener('click', () => {
-        if (!requireSize()) return;
-        addToCart(p.id, size, qty, { silent: true });
-        openCheckout();
+        if (requireSize()) window.open(whatsappUrl(p, size, qty), '_blank', 'noopener');
       });
 
       $('#pdpShare').addEventListener('click', async () => {
@@ -434,24 +442,27 @@
   if (page === 'home') {
     $('[data-services]').innerHTML = SERVICES;
 
-    // Featured product tabs
-    const grid = $('#productGrid');
-    const viewAll = $('#viewAll');
-    const showTab = slug => {
+    // One row per category: its products, then a button to the full category page.
+    const HOME_ROWS = ['formal-shirts', 'casual-shirts', 'polos-tees', 'bottoms', 'winter-collection', 'tailoring', 'fragrance'];
+    $('#categoryRows').innerHTML = HOME_ROWS.map((slug, i) => {
       const col = collectionBySlug[slug];
-      grid.innerHTML = PRODUCTS.filter(col.match).sort(byRank).slice(0, 8).map(cardHTML).join('');
-      viewAll.href = `${slug}.html`;
-      viewAll.textContent = slug === 'shop' ? 'View all' : `View all ${col.title}`;
-      $$('#homeTabs .chip').forEach(c => { const on = c.dataset.tab === slug; c.classList.toggle('is-active', on); c.setAttribute('aria-selected', on); });
-      syncWishButtons();
-    };
-    $$('#homeTabs .chip').forEach(c => c.addEventListener('click', () => showTab(c.dataset.tab)));
-    window.__renderPage = () => showTab($('#homeTabs .chip.is-active').dataset.tab);
-
-    $$('[data-count-for]').forEach(el => {
-      const col = collectionBySlug[el.dataset.countFor];
-      el.textContent = `${PRODUCTS.filter(col.match).length} pieces`;
-    });
+      const items = PRODUCTS.filter(col.match).sort(byRank);
+      return `<section class="cat-row" id="row-${slug}">
+        <div class="container">
+          <div class="cat-row__head reveal">
+            <div>
+              <p class="eyebrow eyebrow--dark">${String(i + 1).padStart(2, '0')} · ${esc(col.eyebrow)}</p>
+              <h2 class="cat-row__title"><a href="${slug}.html">${esc(col.title)}</a></h2>
+            </div>
+            <p class="cat-row__count">${items.length} ${items.length === 1 ? 'piece' : 'pieces'}</p>
+          </div>
+          <div class="product-grid cat-row__track">${items.slice(0, 4).map(cardHTML).join('')}</div>
+          <div class="cat-row__foot">
+            <a class="btn btn--dark" href="${slug}.html">View All Products</a>
+          </div>
+        </div>
+      </section>`;
+    }).join('');
   }
 
   /* ---------- Announcement bar ---------- */

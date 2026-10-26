@@ -70,7 +70,7 @@
           <button class="icon-btn icon-btn--light" data-hero-next aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </div>
-      <a href="#collections" class="hero__scroll" aria-label="Scroll to collections"><span></span></a>
+      <a href="#categoryRows" class="hero__scroll" aria-label="Scroll to products"><span></span></a>
     </section>
 
     <!-- Marquee -->
@@ -81,61 +81,8 @@
       </div>
     </div>
 
-    <!-- Collections -->
-    <section class="section collections" id="collections">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow eyebrow--dark">Curated Collections</p>
-          <h2 class="section-title">Dressed for every <em>chapter</em></h2>
-        </div>
-        <div class="collections__grid">
-          <a href="winter-collection.html" class="col-card col-card--tall reveal">
-            <img src="https://images.unsplash.com/photo-1604644401890-0bd678c83788?auto=format&fit=crop&w=1000&q=80" alt="Rail of wool coats in navy and red" loading="lazy">
-            <div class="col-card__body"><span class="col-card__count" data-count-for="winter-collection"></span><h3>The Winter Collection</h3><span class="col-card__cta">Shop now</span></div>
-          </a>
-          <a href="new-arrivals.html" class="col-card reveal">
-            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=900&q=80" alt="Man in a royal blue suit walking" loading="lazy">
-            <div class="col-card__body"><span class="col-card__count" data-count-for="new-arrivals"></span><h3>New Arrivals</h3><span class="col-card__cta">Shop now</span></div>
-          </a>
-          <a href="fragrance.html" class="col-card reveal">
-            <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=900&q=80" alt="Amber glass perfume bottle on linen" loading="lazy">
-            <div class="col-card__body"><span class="col-card__count" data-count-for="fragrance"></span><h3>Fragrance</h3><span class="col-card__cta">Shop now</span></div>
-          </a>
-          <a href="tops.html" class="col-card reveal">
-            <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=900&q=80" alt="White dress shirts hanging on a rail" loading="lazy">
-            <div class="col-card__body"><span class="col-card__count" data-count-for="tops"></span><h3>Tops — Shirts &amp; Polos</h3><span class="col-card__cta">Shop now</span></div>
-          </a>
-          <a href="bottoms.html" class="col-card reveal">
-            <img src="https://images.unsplash.com/photo-1584865288642-42078afe6942?auto=format&fit=crop&w=900&q=80" alt="Man in white shirt and tailored black trousers" loading="lazy">
-            <div class="col-card__body"><span class="col-card__count" data-count-for="bottoms"></span><h3>Bottoms — Trousers</h3><span class="col-card__cta">Shop now</span></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured products -->
-    <section class="section shop" id="shop">
-      <div class="container">
-        <div class="section-head section-head--row reveal">
-          <div>
-            <p class="eyebrow eyebrow--dark">The Shop</p>
-            <h2 class="section-title">Shop the <em>essentials</em></h2>
-          </div>
-          <a href="shop.html" class="btn btn--outline" id="viewAll">View all</a>
-        </div>
-
-        <div class="filters reveal" role="tablist" aria-label="Featured products" id="homeTabs">
-          <button class="chip is-active" data-tab="shop" role="tab" aria-selected="true">Bestsellers</button>
-          <button class="chip" data-tab="new-arrivals" role="tab" aria-selected="false">New Arrivals</button>
-          <button class="chip" data-tab="tops" role="tab" aria-selected="false">Shirts &amp; Polos</button>
-          <button class="chip" data-tab="bottoms" role="tab" aria-selected="false">Bottoms</button>
-          <button class="chip" data-tab="winter-collection" role="tab" aria-selected="false">Winter</button>
-          <button class="chip" data-tab="fragrance" role="tab" aria-selected="false">Fragrance</button>
-        </div>
-
-        <div class="product-grid" id="productGrid"></div>
-      </div>
-    </section>
+    <!-- Category rows: one row per collection, each with Buy Now on every product -->
+    <div class="cat-rows" id="categoryRows"></div>
 
     <!-- Story -->
     <section class="section story" id="story">
